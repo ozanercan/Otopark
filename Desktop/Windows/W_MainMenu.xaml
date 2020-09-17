@@ -1,0 +1,68 @@
+﻿<Window x:Name="window" x:Class="Desktop.Windows.W_MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop.Windows"
+        mc:Ignorable="d"
+        Title="ozanercan.com.tr | Otopark | Ana Menü" Height="768" Width="1024" Foreground="White" Loaded="window_Loaded" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/Desktop;component/Images/icon.png" Background="{x:Null}" Closing="window_Closing">
+    <Grid>
+        <Menu x:Name="menu" Height="35" VerticalAlignment="Top" Foreground="#FF323232" Background="White">
+            <MenuItem x:Name="menuItem_FastAccessPlaces" Header="Hızlı Erişim Alanları" Height="35" BorderBrush="{x:Null}">
+                <MenuItem x:Name="menuItem_ParkPlace" Header="Park Alanları" Foreground="Black" BorderBrush="{x:Null}" Click="menuItem_ParkPlace_Click"/>
+                <MenuItem x:Name="menuItem_ParkHistoryList" Header="Park Geçmişi" Foreground="Black" BorderBrush="{x:Null}" Click="menuItem_ParkHistoryList_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="menuItem_ParkandPlaceOperations" Header="Park ve Alan İşlemleri" Height="35">
+                <MenuItem Header="Park İşlemleri" Foreground="Black">
+                    <MenuItem x:Name="menuItem_ParkList" Header="Listele" Foreground="Black" Click="menuItem_ParkList_Click" />
+                </MenuItem>
+                <MenuItem x:Name="menuItem_ParkPlaceOperation" Header="Park Alanı İşlemleri" Foreground="Black" Click="menuItem_ParkPlaceOperation_Click" />
+            </MenuItem>
+            <MenuItem x:Name="menuItem_CustomerOperations" Header="Müşteri İşlemleri" Height="35">
+                <MenuItem x:Name="menuItem_CustomerList" Header="Listele" Foreground="Black" Click="menuItem_CustomerList_Click" />
+                <MenuItem x:Name="menuItem_CustomerCreate" Header="Oluştur" Foreground="Black" Click="menuItem_CustomerCreate_Click" />
+                <MenuItem x:Name="menuItem_CustomerUpdatendDelete" Header="Düzenle/Sil" Foreground="Black" Click="menuItem_CustomerUpdatendDelete_Click" />
+            </MenuItem>
+            <MenuItem x:Name="menuItem_EmployeeOperations" Header="Personel İşlemleri" Height="35">
+                <MenuItem x:Name="menuItem_EmployeeList" Header="Listele" Foreground="Black" Click="menuItem_EmployeeList_Click" />
+                <MenuItem x:Name="menuItem_EmployeeCreate" Header="Oluştur" Foreground="Black" Click="menuItem_EmployeeCreate_Click" />
+                <MenuItem x:Name="menuItem_EmployeeUpdatendDelete" Header="Düzenle/Sil" Foreground="Black" Click="menuItem_EmployeeUpdatendDelete_Click" />
+            </MenuItem>
+            <MenuItem x:Name="menuItem_CampaignOperations" Header="Kampanya İşlemleri" IsEnabled="False">
+                <MenuItem Header="Listele" Foreground="Black" />
+                <MenuItem Header="Oluştur" Foreground="Black" />
+                <MenuItem Header="Düzenle/Sil" Foreground="Black" />
+            </MenuItem>
+            <MenuItem x:Name="menuItem_VehicleOperations" Header="Araç İşlemleri" Height="35">
+                <MenuItem Header="Araç İşlemleri" Foreground="Black">
+                    <MenuItem x:Name="menuItem_VehicleList" Header="Listele" Foreground="Black" Click="menuItem_VehicleList_Click" />
+                    <MenuItem x:Name="menuItem_VehicleCreate" Header="Oluştur" Foreground="Black" Click="menuItem_VehicleCreate_Click" />
+                    <MenuItem x:Name="menuItem_VehicleUpdatendDelete" Header="Düzenle/Sil" Foreground="Black" Click="menuItem_VehicleUpdatendDelete_Click" />
+                </MenuItem>
+                <MenuItem Header="Araç Tip İşlemleri" Foreground="Black">
+                    <MenuItem x:Name="menuItem_VehicleTypeList" Header="Listele" Foreground="Black" Click="menuItem_VehicleTypeList_Click" />
+                    <MenuItem x:Name="menuItem_VehicleTypeCreate" Header="Oluştur" Foreground="Black" Click="menuItem_VehicleTypeCreate_Click" />
+                    <MenuItem x:Name="menuItem_VehicleTypeUpdatendDelete" Header="Düzenle/Sil" Foreground="Black" Click="menuItem_VehicleTypeUpdatendDelete_Click" />
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="menuItem_PriceOperations" Header="Fiyatlandırma İşlemleri" Height="35">
+                <MenuItem x:Name="menuItem_PriceList" Header="Listele" Foreground="Black" Click="menuItem_PriceList_Click" />
+                <MenuItem x:Name="menuItem_PriceCreate" Header="Oluştur" Foreground="Black" Click="menuItem_PriceCreate_Click" />
+                <MenuItem x:Name="menuItem_PriceUpdatendDelete" Header="Düzenle/Sil" Foreground="Black" Click="menuItem_PriceUpdatendDelete_Click" />
+            </MenuItem>
+            <MenuItem x:Name="menuItem_BrandndModelOperations" Header="Marka/Model İşlemleri" Height="35">
+                <MenuItem Header="Marka İşlemleri" Foreground="Black">
+                    <MenuItem x:Name="menuItem_BrandList" Header="Listele" Foreground="Black" Click="menuItem_BrandList_Click" />
+                    <MenuItem x:Name="menuItem_BrandCreate" Header="Oluştur" Foreground="Black" Click="menuItem_BrandCreate_Click" />
+                    <MenuItem x:Name="menuItem_BrandUpdatendDelete" Header="Düzenle/Sil" Foreground="Black" Click="menuItem_BrandUpdatendDelete_Click" />
+                </MenuItem>
+                <MenuItem Header="Model İşlemleri" Foreground="Black">
+                    <MenuItem x:Name="menuItem_ModelList" Header="Listele" Foreground="Black" Click="menuItem_ModelList_Click" />
+                    <MenuItem x:Name="menuItem_ModelCreate" Header="Oluştur" Foreground="Black" Click="menuItem_ModelCreate_Click" />
+                    <MenuItem x:Name="menuItem_ModelUpdatendDelete" Header="Düzenle/Sil" Foreground="Black" Click="menuItem_ModelUpdatendDelete_Click" />
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Frame x:Name="frame" Content="" NavigationUIVisibility="Hidden" Margin="0,35,0,0" Background="#7F000000" />
+    </Grid>
+</Window>

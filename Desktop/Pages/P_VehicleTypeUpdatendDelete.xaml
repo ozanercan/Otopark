@@ -1,0 +1,33 @@
+﻿<Page x:Name="page" x:Class="Desktop.Pages.P_VehicleTypeUpdatendDelete"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Desktop.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="P_VehicleTypeCreate" Foreground="White">
+
+    <Grid>
+        <Grid x:Name="grid_List">
+            <DataGrid x:Name="dataGrid" ColumnWidth="*" ItemsSource="{Binding VehicleTypes, ElementName=page}" PreviewMouseDoubleClick="dataGrid_PreviewMouseDoubleClick" AutoGeneratingColumn="dataGrid_AutoGeneratingColumn" IsReadOnly="True" Background="{x:Null}">
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="menuItem_Delete" Header="Sil" Click="menuItem_Delete_Click" />
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+        </Grid>
+        <Grid x:Name="grid_Inputs" Visibility="Hidden">
+            <Button x:Name="button_Previous" Content="Geri" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" IsCancel="True" Click="button_Previous_Click" Background="{x:Null}" BorderBrush="#FFFF4000" Foreground="White" />
+            <Label Content="Tip Adı" HorizontalContentAlignment="Center" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0 50 0 0" Foreground="{Binding Foreground, ElementName=page}" />
+            <TextBox x:Name="textBox_Name" FontSize="20" VerticalAlignment="Top" Margin="337,90,337,0" HorizontalAlignment="Center" Width="350" Foreground="White" Background="{x:Null}" />
+            <Label Content="Silinme Durumu" HorizontalContentAlignment="Center" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,130,0,0" Foreground="{Binding Foreground, ElementName=page}" />
+            <ComboBox x:Name="comboBox_isDeleted" FontSize="20" VerticalAlignment="Top" Margin="0,170,0,0" HorizontalAlignment="Center" Width="350" Foreground="Black" Background="{x:Null}">
+                <ComboBoxItem Content="Silinmedi" />
+                <ComboBoxItem Content="Silindi" />
+            </ComboBox>
+            <Button x:Name="button_Edit" Content="Güncelle" HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top" Width="150" Height="35" IsDefault="True" Click="button_Edit_Click" BorderBrush="#FF0FFF00" Foreground="White" Background="{x:Null}" Cursor="Hand" />
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="Desktop.Windows.W_License"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop.Windows"
+        mc:Ignorable="d"
+        Title="Lisans Kaydı" Height="153.6" Width="539.2" Background="#FFEDEDED" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Label  Content="Lütfen lisans kodunuzu aşağıdaki metin kutusuna eksiksiz bir biçimde yazın." VerticalAlignment="Top" Margin="0,10,0,0" HorizontalAlignment="Center"/>
+        <TextBox x:Name="textBox_LicenseCode" HorizontalAlignment="Center" Height="23" Margin="0,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="408" TextChanged="textBox_LicenseCode_TextChanged" MaxLength="29"/>
+        <Label x:Name="label_LicenseCodeLength" Content="0/29" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,76,63,0" FontSize="10"/>
+        <Button x:Name="button_Confirm" Content="Kodu Onayla" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="90" Height="25" BorderBrush="#FF0FFF00" Background="{x:Null}" IsDefault="True" Click="button_Confirm_Click" IsEnabled="False"/>
+
+    </Grid>
+</Window>

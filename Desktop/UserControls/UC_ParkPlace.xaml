@@ -1,0 +1,21 @@
+﻿<UserControl x:Name="userControl" x:Class="Desktop.UserControls.UC_ParkPlace"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Desktop.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="200" d:DesignWidth="150" Foreground="White" Loaded="userControl_Loaded" Background="Black" PreviewMouseLeftButtonUp="userControl_PreviewMouseLeftButtonUp">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label x:Name="label_Name" Grid.Row="0" HorizontalContentAlignment="Center" FontSize="20" VerticalContentAlignment="Center" Content="{Binding ParkPlace.Name, ElementName=userControl}" Foreground="{Binding Foreground, ElementName=userControl}" />
+
+        <Label x:Name="label_Plate" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Foreground="{Binding Foreground, ElementName=userControl}" HorizontalContentAlignment="Center" Content="{Binding Vehicle.Plate, ElementName=userControl}" FontSize="20" VerticalContentAlignment="Stretch" Background="{x:Null}" />
+
+        <Label x:Name="label_ParkedDateTime" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="2" Foreground="{Binding Foreground, ElementName=userControl}" HorizontalContentAlignment="Center" Content="{Binding Park.ParkingStartDateTime, ElementName=userControl}" ContentStringFormat="{}{0:dd/MM/yyyy - HH:mm}" FontSize="20" VerticalContentAlignment="Stretch" Background="{x:Null}" />
+    </Grid>
+</UserControl>

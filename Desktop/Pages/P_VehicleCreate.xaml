@@ -1,0 +1,25 @@
+﻿<Page x:Name="page" x:Class="Desktop.Pages.P_VehicleCreate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Desktop.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="P_VehicleCreate" Loaded="page_Loaded">
+
+    <Grid>
+        <Label Content="Araç Tipi" Margin="0,50,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" HorizontalContentAlignment="Center" />
+        <ComboBox x:Name="comboBox_VehicleType" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="220" SelectedIndex="0" Background="{x:Null}" />
+        <Label Content="Plaka" Margin="0,120,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" HorizontalContentAlignment="Center" />
+        <TextBox x:Name="textBox_Plate" Margin="0,150,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" HorizontalAlignment="Center" Width="220" CharacterCasing="Upper" LostFocus="textBox_Plate_LostFocus" Background="{x:Null}" />
+
+        <Label Content="Marka" Margin="0,190,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" HorizontalContentAlignment="Center" />
+        <ComboBox x:Name="comboBox_Brand" Margin="0,220,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="16" HorizontalAlignment="Center" Width="220" SelectedIndex="0" IsEditable="True" SelectionChanged="comboBox_Brand_SelectionChanged" IsReadOnly="True" Background="{x:Null}" />
+        <Label Content="Model" Margin="0,260,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" HorizontalContentAlignment="Center" />
+        <ComboBox x:Name="comboBox_Model" Margin="0,290,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="16" HorizontalAlignment="Center" Width="220" SelectedIndex="0" IsEditable="True" Background="{x:Null}"/>
+        <Label Content="Renk" Margin="0,330,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" HorizontalContentAlignment="Center" />
+        <TextBox x:Name="textBox_Color" Margin="0,360,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" HorizontalAlignment="Center" Width="220" CharacterCasing="Upper" Background="{x:Null}" />
+        <Button x:Name="button_Create" Content="Kayıt Et" HorizontalAlignment="Center" Margin="0,450,0,0" VerticalAlignment="Top" Width="100" IsDefault="True" Height="25" BorderBrush="#FF0FFF00" Background="{x:Null}" Foreground="White" Click="button_Create_Click" Cursor="Hand" />
+    </Grid>
+</Page>

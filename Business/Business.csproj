@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81726D96-9DA6-422E-8B26-F7DD7BD22156}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Business</RootNamespace>
+    <AssemblyName>Business</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\ICampaignService.cs" />
+    <Compile Include="Abstract\ICustomerService.cs" />
+    <Compile Include="Abstract\IEmployeeService.cs" />
+    <Compile Include="Abstract\IBrandService.cs" />
+    <Compile Include="Abstract\ILicenseService.cs" />
+    <Compile Include="Abstract\ILocalLicenseService.cs" />
+    <Compile Include="Abstract\IModelService.cs" />
+    <Compile Include="Abstract\IParkHistoryService.cs" />
+    <Compile Include="Abstract\IParkPlaceService.cs" />
+    <Compile Include="Abstract\IParkService.cs" />
+    <Compile Include="Abstract\IPersonService.cs" />
+    <Compile Include="Abstract\Apis\IApiLicenseService.cs" />
+    <Compile Include="Abstract\IVehiclePriceService.cs" />
+    <Compile Include="Abstract\IVehicleService.cs" />
+    <Compile Include="Abstract\IVehicleTypeService.cs" />
+    <Compile Include="Concrete\CampaignManager.cs" />
+    <Compile Include="Concrete\CustomerManager.cs" />
+    <Compile Include="Concrete\EmployeeManager.cs" />
+    <Compile Include="Concrete\BrandManager.cs" />
+    <Compile Include="Concrete\LicenseManager.cs" />
+    <Compile Include="Concrete\LocalLicenseManager.cs" />
+    <Compile Include="Concrete\ModelManager.cs" />
+    <Compile Include="Concrete\ParkHistoryManager.cs" />
+    <Compile Include="Concrete\ParkPlaceManager.cs" />
+    <Compile Include="Concrete\ParkManager.cs" />
+    <Compile Include="Concrete\PersonManager.cs" />
+    <Compile Include="Concrete\Apis\ApiLicenseManager.cs" />
+    <Compile Include="Concrete\VehiclePriceManager.cs" />
+    <Compile Include="Concrete\VehicleManager.cs" />
+    <Compile Include="Concrete\VehicleTypeManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{F3B644A4-4EA3-4E77-9B1B-70B69EA78555}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{AC669552-2F53-45F1-8FF0-6CBB57C6F5CC}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

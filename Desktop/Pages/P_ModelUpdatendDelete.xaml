@@ -1,0 +1,40 @@
+﻿<Page x:Name="page" x:Class="Desktop.Pages.P_ModelUpdatendDelete"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Desktop.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="P_VehicleTypeList" Loaded="Page_Loaded" Foreground="White">
+
+    <Grid>
+        <Grid x:Name="grid_List" Visibility="Visible">
+            <DataGrid x:Name="dataGrid" ColumnWidth="*" IsReadOnly="True" ItemsSource="{Binding ModelViews, ElementName=page}" PreviewMouseDoubleClick="dataGrid_PreviewMouseDoubleClick" AutoGeneratingColumn="dataGrid_AutoGeneratingColumn" Background="{x:Null}">
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="menuItem_Delete" Click="menuItem_Delete_Click" Header="Sil" />
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+        </Grid>
+
+        <Grid x:Name="grid_Inputs" Visibility="Hidden">
+            <Button x:Name="button_Previous" Content="Geri" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Click="button_Previous_Click" Background="{x:Null}" Foreground="White" BorderBrush="#FFFF4000"></Button>
+            <Label Content="Marka" VerticalAlignment="Top" Margin="0,50,0,0" HorizontalContentAlignment="Center" Foreground="{Binding Foreground, ElementName=page}" FontSize="20" />
+            <ComboBox x:Name="comboBox_Brands" Margin="0,90,0,0" Width="325" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" Background="{x:Null}"></ComboBox>
+            <Label Content="Model" VerticalAlignment="Top" Margin="0,140,0,0" HorizontalContentAlignment="Center" Foreground="{Binding Foreground, ElementName=page}" FontSize="20" />
+            <ComboBox x:Name="comboBox_Models" Margin="0,180,0,0" Width="325" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" Background="{x:Null}"/>
+
+            <Label Content="Yeni Model Adı" VerticalAlignment="Top" Margin="0,230,0,0" HorizontalContentAlignment="Center" Foreground="{Binding Foreground, ElementName=page}" FontSize="20" />
+            <TextBox x:Name="textBox_Name" Margin="0,270,0,0" Width="325" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" Background="{x:Null}" Foreground="White" ></TextBox>
+            <Label Content="Silinme Durumu" VerticalAlignment="Top" Margin="0,320,0,0" HorizontalContentAlignment="Center" Foreground="{Binding Foreground, ElementName=page}" FontSize="20" />
+            <ComboBox x:Name="comboBox_isDelete" Margin="0,360,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="16" HorizontalAlignment="Center" Width="325" SelectedIndex="1" Background="{x:Null}" Height="35">
+                <ComboBoxItem Content="Silinmedi" />
+                <ComboBoxItem Content="Silindi" />
+            </ComboBox>
+
+            <Button x:Name="button_Update" Margin="460,466,444,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Height="35" Content="Güncelle" Click="button_Update_Click" Background="{x:Null}" BorderBrush="#FF0FFF00" Foreground="White" IsDefault="True" Cursor="Hand"></Button>
+        </Grid>
+    </Grid>
+</Page>

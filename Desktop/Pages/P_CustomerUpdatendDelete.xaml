@@ -1,0 +1,32 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Desktop.Pages"
+      xmlns:UserControls="clr-namespace:Desktop.UserControls" x:Name="page" x:Class="Desktop.Pages.P_CustomerUpdatendDelete"
+      mc:Ignorable="d"
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="P_EmployeeCreate" Foreground="White" Loaded="page_Loaded">
+    <Grid>
+        <Grid x:Name="grid_List">
+            <DataGrid x:Name="dataGrid" ColumnWidth="*" ItemsSource="{Binding CustomerDtos,ElementName=page}" IsReadOnly="True" PreviewMouseDoubleClick="dataGrid_PreviewMouseDoubleClick" AutoGeneratingColumn="dataGrid_AutoGeneratingColumn" Background="{x:Null}">
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="menuItem_Delete" Click="menuItem_Delete_Click" Header="Sil"></MenuItem>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+        </Grid>
+        <Grid x:Name="grid_Inputs" Visibility="Hidden">
+            <Button x:Name="button_Previous" Content="Geri" Height="25" Width="75" PreviewMouseLeftButtonUp="button_Previous_PreviewMouseLeftButtonUp" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" BorderBrush="#FFFF4000" Cursor="Hand"></Button>
+            <UserControls:UC_Person x:Name="userControl_Person" Margin="0,100,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="250" />
+            <Label Content="Silime Durumu" VerticalAlignment="Top" Margin="0,440,0,0" Foreground="{Binding Foreground, ElementName=page}" FontSize="16" HorizontalContentAlignment="Center" />
+            <ComboBox x:Name="comboBox_IsDeleted" FontSize="16" VerticalAlignment="Top" Margin="0,480,0,0" HorizontalAlignment="Center" Width="250">
+                <ComboBoxItem Content="Silinmedi" />
+                <ComboBoxItem Content="Silindi" />
+            </ComboBox>
+            <Button x:Name="button_Update" Content="Güncelle" HorizontalAlignment="Center" Margin="0,550,0,0" VerticalAlignment="Top" Width="100" IsDefault="True" Height="30" Background="{x:Null}" Foreground="White" BorderBrush="#FF0FFF00" Click="button_Update_Click" Cursor="Hand" />
+        </Grid>
+    </Grid>
+</Page>

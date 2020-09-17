@@ -1,0 +1,19 @@
+﻿<Page x:Name="page" x:Class="Desktop.Pages.P_ParkPlaceOperations"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Desktop.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="P_ParkPlaces">
+    <Grid x:Name="grid_Main">
+        <Menu Height="23" VerticalAlignment="Top">
+            <MenuItem x:Name="menuItem_CreateObject" Header="Yeni Nesne" Click="menuItem_CreateObject_Click" />
+            <MenuItem x:Name="menuItem_BackgroundImageChangeObject" Header="Arka Planı Değiştir" Click="menuItem_BackgroundImageChangeObject_Click" />
+            <MenuItem x:Name="menuItem_Save" Header="Değişiklikleri Kaydet" Click="menuItem_Save_Click" />
+        </Menu>
+        <Canvas x:Name="canvas" Margin="0, 23, 0, 0"  Background="#0C000000" PreviewMouseMove="canvas_PreviewMouseMove" PreviewMouseLeftButtonUp="canvas_PreviewMouseLeftButtonUp">
+        </Canvas>
+    </Grid>
+</Page>

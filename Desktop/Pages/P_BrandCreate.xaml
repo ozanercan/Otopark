@@ -1,0 +1,17 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Desktop.Pages"
+      xmlns:UserControls="clr-namespace:Desktop.UserControls" x:Name="page" x:Class="Desktop.Pages.P_BrandCreate"
+      mc:Ignorable="d"
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="P_EmployeeCreate" Foreground="White">
+    <Grid>
+        <Label Content="Marka Adı" VerticalAlignment="Top" Margin="0,50,0,0" Foreground="{Binding Foreground, ElementName=page}" FontSize="18" HorizontalContentAlignment="Center" />
+        <TextBox x:Name="textBox_BrandName" TextWrapping="Wrap" VerticalAlignment="Top"  Margin="0,90,0,0" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="250" FontSize="18" CharacterCasing="Upper" Background="{x:Null}" Foreground="White" />
+        <Button x:Name="button_Create" Content="Kayıt Et" HorizontalAlignment="Center" Margin="0,170,0,0" VerticalAlignment="Top" Width="100" IsDefault="True" Height="30" Background="{x:Null}" Foreground="White" BorderBrush="#FF0FFF00" Click="button_Create_Click" Cursor="Hand" />
+        
+    </Grid>
+</Page>

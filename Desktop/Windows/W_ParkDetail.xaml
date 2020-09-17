@@ -1,0 +1,59 @@
+﻿<Window x:Name="window" x:Class="Desktop.Windows.W_ParkDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop.Windows"
+        mc:Ignorable="d"
+        Title="Park Detayları" Height="687.2" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="window_Loaded" Background="#FFEDF2F4">
+    <Grid>
+        <Grid x:Name="grid_ParkPlaceInformations" Height="100" VerticalAlignment="Top" Margin="0">
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" />
+            <Label Content="Park Yeri Bilgileri" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0" FontSize="14" />
+            <Label Content="Park Yeri Adı" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,30,0,0" />
+            <TextBox x:Name="textBox_ParkPlaceName" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top" Width="199" IsReadOnly="True" Text="{Binding ParkPlace.Name, ElementName=window}" Background="#FFEBEBEB" Cursor="No" />
+        </Grid>
+
+        <Grid x:Name="grid_VehicleInformations" Height="100" VerticalAlignment="Top" Margin="0,100,0,0">
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" />
+            <Label Content="Araç Bilgileri" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0" FontSize="14" />
+            <Label Content="Plaka" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,30,0,0" />
+            <TextBox x:Name="textBox_Plate" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top" Width="199" IsReadOnly="True" Background="#FFE4E4E4" Text="{Binding Path=Vehicle.Plate, ElementName=window}" Cursor="No" />
+            <Button x:Name="button_VehicleDetail_Copy1" Content="Detay" Margin="0,52,75,0" VerticalAlignment="Top" Width="45" Height="22" Cursor="Hand" Click="button_VehicleDetail_Click" HorizontalAlignment="Right" IsEnabled="False" />
+        </Grid>
+        <Grid x:Name="grid_CustomerInformation" Height="100" VerticalAlignment="Top" Margin="0,200,0,0">
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" />
+            <Label Content="Müşteri Bilgileri" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0" FontSize="14" />
+            <Label Content="Müşteri T.C." VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,30,0,0" />
+            <TextBox x:Name="textBox_PersonNationalityIdentityNumber" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top" Width="199" Background="#FFE4E4E4" IsReadOnly="True" Text="{Binding Path=Person.NationalIdentityNumber, ElementName=window}" Cursor="No" />
+            <Button x:Name="button_CustomerDetail" Content="Detay" Margin="0,52,75,0" VerticalAlignment="Top" Width="45" Height="22" Cursor="Hand" Click="button_CustomerDetail_Click" HorizontalAlignment="Right" IsEnabled="False" />
+        </Grid>
+        <Grid x:Name="grid_CampaignInformations" Height="100" VerticalAlignment="Top" Margin="0,300,0,0">
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" />
+            <Label Content="Kampanya Bilgileri" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0" FontSize="14" />
+            <Label Content="Kampanya Adı" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,30,0,0" />
+            <TextBox x:Name="textBox_CampaignName" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top" Width="199" IsReadOnly="True" Background="#FFE4E4E4" Text="{Binding Path=Campaign.Name,ElementName=window}" Cursor="No" />
+        </Grid>
+        <Grid x:Name="grid_DateTimeInformations" Height="108" VerticalAlignment="Top" Margin="0,400,-0.4,0">
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1" />
+            <Label Content="Tarih - Saat Bilgileri" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0" FontSize="14" />
+            <Label Content="Tarih / Zaman" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,30,0,0" />
+            <TextBox x:Name="textBox_DateAndClock" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top" Width="199" Background="#FFE4E4E4" Text="{Binding Park.ParkingStartDateTime, ElementName=window, ConverterCulture='tr-TR', StringFormat=' {0:g}'}" Cursor="No" IsReadOnly="True" />
+        </Grid>
+
+        <Grid>
+            <Grid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="menuItem_ManuelPrice" Header="Elle Gir" Click="menuItem_ManuelPrice_Click" />
+                    <MenuItem x:Name="menuItem_AutomaticPrice" Header="Otomatik Hesapla" Click="menuItem_AutomaticPrice_Click" />
+                </ContextMenu>
+            </Grid.ContextMenu>
+            <Label Content="Fiyat" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,510,0,0" FontSize="20" Background="{x:Null}" Foreground="Black" />
+            <Label x:Name="label_Price" Content="{Binding VehiclePrice.Price, ElementName=window}" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,560,0,0" FontSize="20" Background="{x:Null}" Foreground="Red" />
+            <TextBox x:Name="textBox_Price" VerticalAlignment="Top"
+HorizontalContentAlignment="Center" Margin="0,560,0,0" FontSize="20" Background="{x:Null}" Foreground="Red" HorizontalAlignment="Center" Width="199" Visibility="Hidden" />
+        </Grid>
+
+        <Button x:Name="button_ParkFinished" Content="Araç Çıkışı Yap" HorizontalAlignment="Center" Margin="0,610,0,0" VerticalAlignment="Top" Width="100" Height="30" Cursor="Hand" Click="button_ParkFinished_Click" IsDefault="True" />
+    </Grid>
+</Window>

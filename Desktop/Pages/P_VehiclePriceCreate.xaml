@@ -1,0 +1,24 @@
+﻿<Page x:Name="page" x:Class="Desktop.Pages.P_VehiclePriceCreate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Desktop.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="P_VehiclePricesCreate" Foreground="White" Loaded="page_Loaded">
+
+    <Grid>
+
+        <Label Content="Araç Tipi" VerticalAlignment="Top" Margin="0,50,0,0" HorizontalContentAlignment="Center" Foreground="{Binding Foreground, ElementName=page}" FontSize="20" />
+        <ComboBox x:Name="comboBox_VehicleType" Margin="0,90,0,0" Width="325" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" SelectedIndex="0" Background="{x:Null}"></ComboBox>
+
+        <Label Content="Saat" VerticalAlignment="Top" Margin="0,140,0,0" HorizontalContentAlignment="Center" Foreground="{Binding Foreground, ElementName=page}" FontSize="20" />
+        <TextBox x:Name="textBox_Hour" Margin="0,180,0,0" Width="325" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" Background="{x:Null}" Foreground="White" ></TextBox>
+
+        <Label Content="Fiyat" VerticalAlignment="Top" Margin="0,230,0,0" HorizontalContentAlignment="Center" Foreground="{Binding Foreground, ElementName=page}" FontSize="20" />
+        <TextBox x:Name="textBox_Price" Margin="0,270,0,0" Width="325" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" Foreground="White" Background="{x:Null}" ></TextBox>
+
+        <Button x:Name="button_Create" Margin="0,360,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Height="35" Content="Oluştur" Click="button_Create_Click" Background="{x:Null}" BorderBrush="#FF0FFF00" Foreground="White" Cursor="Hand"></Button>
+    </Grid>
+</Page>
