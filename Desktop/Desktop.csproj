@@ -184,6 +184,9 @@
     <Compile Include="Windows\W_CustomerCreate.xaml.cs">
       <DependentUpon>W_CustomerCreate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\W_DatabaseConnectionAdd.xaml.cs">
+      <DependentUpon>W_DatabaseConnectionAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\W_DinamikKareOlusturma.xaml.cs">
       <DependentUpon>W_DinamikKareOlusturma.xaml</DependentUpon>
     </Compile>
@@ -314,6 +317,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\W_CustomerCreate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\W_DatabaseConnectionAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

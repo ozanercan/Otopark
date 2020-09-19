@@ -2,7 +2,11 @@
 using Business.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete.MySQL;
+using DataAccess.Concrete.SQLite;
+using Desktop.Classes;
+using Desktop.Properties;
 using Desktop.Windows;
+using System.Data.SQLite;
 using System.Windows;
 using Unity;
 
@@ -29,6 +33,7 @@ namespace Desktop
             container.RegisterType<IVehicleService, VehicleManager>();
             container.RegisterType<IVehiclePriceService, VehiclePriceManager>();
             container.RegisterType<IVehicleTypeService, VehicleTypeManager>();
+            container.RegisterType<IDatabaseConnectionOperationService, DatabaseConnectionOperationManager>();
 
             // Api Servisi
 
@@ -46,6 +51,10 @@ namespace Desktop
             container.RegisterType<IVehicleDal, MySqlVehicleDal>();
             container.RegisterType<IVehiclePriceDal, MySqlVehiclePriceDal>();
             container.RegisterType<IVehicleTypeDal, MySqlVehicleTypeDal>();
+
+            container.RegisterType<IDatabaseConnectionTestItem, MySqlConnectionTestDal>();
+            container.RegisterType<IDatabaseConnectionStringDal, SqliteDatabaseConnectionStringDal>();
+
 
 
             //W_Login w_Login = container.Resolve<W_Login>();

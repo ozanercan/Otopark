@@ -13,6 +13,7 @@ namespace Desktop.Windows
     {
 
         #region fieldler
+        private IDatabaseConnectionOperationService _databaseConnectionTestService;
         private IBrandService _brandService;
         private ICampaignService _campaignService;
         private ICustomerService _customerService;
@@ -26,8 +27,9 @@ namespace Desktop.Windows
         private IVehiclePriceService _vehiclePriceService;
         private IVehicleTypeService _vehicleTypeService;
         #endregion
-        public W_Welcome(IBrandService brandService, ICampaignService campaignService, ICustomerService customerService, IEmployeeService employeeService, IModelService modelService, IParkHistoryService parkHistoryService, IParkPlaceService parkPlaceService, IParkService parkService, IPersonService personService, IVehicleService vehicleService, IVehiclePriceService vehiclePriceService, IVehicleTypeService vehicleTypeService)
+        public W_Welcome(IDatabaseConnectionOperationService databaseConnectionTestService, IBrandService brandService, ICampaignService campaignService, ICustomerService customerService, IEmployeeService employeeService, IModelService modelService, IParkHistoryService parkHistoryService, IParkPlaceService parkPlaceService, IParkService parkService, IPersonService personService, IVehicleService vehicleService, IVehiclePriceService vehiclePriceService, IVehicleTypeService vehicleTypeService)
         {
+            _databaseConnectionTestService = databaseConnectionTestService;
             _brandService = brandService;
             _campaignService = campaignService;
             _customerService = customerService;
@@ -45,9 +47,26 @@ namespace Desktop.Windows
             InitializeComponent();
         }
 
+        W_DatabaseConnectionAdd w_DatabaseConnectionAdd;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             label_Version.Content = "Ver: " + CommonOperations.Application.GetVersion();
+
+            string connectionString = _databaseConnectionTestService.GetConnectionString();
+            if (!String.IsNullOrEmpty(connectionString))
+            {
+                bool isConnectionOpened = _databaseConnectionTestService.Test(connectionString);
+                if (!isConnectionOpened)
+                {
+                    w_DatabaseConnectionAdd = new W_DatabaseConnectionAdd(_databaseConnectionTestService);
+                    w_DatabaseConnectionAdd.ShowDialog();
+                }
+            }
+            else
+            {
+                w_DatabaseConnectionAdd = new W_DatabaseConnectionAdd(_databaseConnectionTestService);
+                w_DatabaseConnectionAdd.ShowDialog();
+            }
         }
 
         private void grid_Support_PreviewMouseUp(object sender, MouseButtonEventArgs e)

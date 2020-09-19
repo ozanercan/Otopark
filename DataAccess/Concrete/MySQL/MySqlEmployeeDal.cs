@@ -66,9 +66,10 @@ namespace DataAccess.Concrete.MySQL
         {
             Employee employee = null;
             con.con.Open();
-            con.cmd.CommandText = "Select * From Employees where UserName=@UserName and Password=@Password;";
+            con.cmd.CommandText = "Select * From Employees where UserName=@UserName and Password=@Password and IsDeleted=@isdeleted;";
             con.cmd.Parameters.AddWithValue("@UserName", parameter.UserName);
             con.cmd.Parameters.AddWithValue("@Password", parameter.Password);
+            con.cmd.Parameters.AddWithValue("@isdeleted", 0);
             con.dr = con.cmd.ExecuteReader();
             if (con.dr.Read())
             {
@@ -134,9 +135,10 @@ namespace DataAccess.Concrete.MySQL
         {
             bool result = false;
             con.con.Open();
-            con.cmd.CommandText = "Select * From Employees where UserName=@UserName and Password=@Password;";
+            con.cmd.CommandText = "Select * From Employees where UserName=@UserName and Password=@Password and IsDeleted=@isdeleted;";
             con.cmd.Parameters.AddWithValue("@UserName", parameter.UserName);
             con.cmd.Parameters.AddWithValue("@Password", parameter.Password);
+            con.cmd.Parameters.AddWithValue("@isdeleted", 0);
             con.dr = con.cmd.ExecuteReader();
             if (con.dr.Read())
                 result = (con.dr[0] != DBNull.Value) ? true : false;

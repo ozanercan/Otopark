@@ -44,11 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IDto.cs" />
+    <Compile Include="Concrete\Models\DatabaseConnectionInformation.cs" />
     <Compile Include="Concrete\Models\Login.cs" />
     <Compile Include="Concrete\Brand.cs" />
     <Compile Include="Concrete\Model.cs" />
     <Compile Include="Concrete\ParkHistory.cs" />
-    <Compile Include="Concrete\License\ProjectLicenseCode.cs" />
     <Compile Include="Concrete\Vehicle.cs" />
     <Compile Include="Concrete\Campaign.cs" />
     <Compile Include="Concrete\Employee.cs" />

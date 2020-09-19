@@ -1,0 +1,25 @@
+﻿<Window x:Class="Desktop.Windows.W_DatabaseConnectionAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop.Windows"
+        mc:Ignorable="d"
+        Title="W_DatabaseConnectionAdd" Height="394.173" Width="276">
+    <Grid Background="White">
+        <Label Content="MySQL Sunucu Adresi" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_HostName" HorizontalAlignment="Center" Height="25" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+
+        <Label Content="MySQL Veritabanı Adı" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_Database" HorizontalAlignment="Center" Height="25" Margin="0,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+
+        <Label Content="MySQL Kullanıcı Adı" HorizontalAlignment="Center" Margin="0,170,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_Username" HorizontalAlignment="Center" Height="25" Margin="0,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+
+        <Label Content="MySQL Kullanıcı Şifresi" HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="password_Password" HorizontalAlignment="Center" Height="25" Margin="0,270,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="button_Save" Content="Kaydet" HorizontalAlignment="Center" Margin="0,315,0,0" VerticalAlignment="Top" Width="80" Height="22" Click="button_Save_Click"/>
+        <Button x:Name="button_Test" Content="Test" HorizontalAlignment="Center" Margin="190,300,34.8,0" VerticalAlignment="Top" Width="44" Height="22" Click="button_Test_Click"/>
+
+    </Grid>
+</Window>

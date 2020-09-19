@@ -86,6 +86,8 @@
   <ItemGroup>
     <Compile Include="Abstract\IBasicMethods.cs" />
     <Compile Include="Abstract\ICampaignDal.cs" />
+    <Compile Include="Abstract\IDatabaseConnectionStringDal.cs" />
+    <Compile Include="Abstract\IDatabaseConnectionTestItem.cs" />
     <Compile Include="Abstract\ICustomerDal.cs" />
     <Compile Include="Abstract\IDalInstance.cs" />
     <Compile Include="Abstract\IEmployeeDal.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="Concrete\MySQL\Connection.cs" />
     <Compile Include="Concrete\MySQL\MySqlBrandDal.cs" />
     <Compile Include="Concrete\MySQL\MySqlCampaignDal.cs" />
+    <Compile Include="Concrete\MySQL\MySqlConnectionTestDal.cs" />
     <Compile Include="Concrete\MySQL\MySqlCustomerDal.cs" />
     <Compile Include="Concrete\MySQL\MySqlEmployeeDal.cs" />
     <Compile Include="Concrete\MySQL\MySqlModelDal.cs" />
@@ -113,6 +116,8 @@
     <Compile Include="Concrete\MySQL\MySqlVehicleDal.cs" />
     <Compile Include="Concrete\MySQL\MySqlVehiclePriceDal.cs" />
     <Compile Include="Concrete\MySQL\MySqlVehicleTypeDal.cs" />
+    <Compile Include="Concrete\SQLite\Connection.cs" />
+    <Compile Include="Concrete\SQLite\SqliteDatabaseConnectionStringDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICampaignService.cs" />
+    <Compile Include="Abstract\IDatabaseConnectionOperationService.cs" />
     <Compile Include="Abstract\ICustomerService.cs" />
     <Compile Include="Abstract\IEmployeeService.cs" />
     <Compile Include="Abstract\IBrandService.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Abstract\IVehicleTypeService.cs" />
     <Compile Include="Concrete\CampaignManager.cs" />
     <Compile Include="Concrete\CustomerManager.cs" />
+    <Compile Include="Concrete\DatabaseConnectionOperationManager.cs" />
     <Compile Include="Concrete\EmployeeManager.cs" />
     <Compile Include="Concrete\BrandManager.cs" />
     <Compile Include="Concrete\ModelManager.cs" />

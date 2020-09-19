@@ -1,4 +1,5 @@
-﻿using MySqlConnector;
+﻿using DataAccess.Abstract;
+using MySqlConnector;
 
 namespace DataAccess.Concrete.MySQL
 {
@@ -8,11 +9,16 @@ namespace DataAccess.Concrete.MySQL
         internal MySqlCommand cmd;
         internal MySqlDataReader dr;
 
-        private string onlineConnectionQuery = "Server=ozanercan.com.tr;Uid=ozanercan;Pwd=07mekan07;Database=ozanerca_otopark;";
-        private string localConnectionQuery = "Server=localhost;Uid=root;Database=otopark;Pwd=;";
+        //private string onlineConnectionQuery = "Server=ozanercan.com.tr;Uid=ozanercan;Pwd=07mekan07;Database=ozanerca_otopark;";
+        //private string localConnectionQuery = "Server=localhost;Uid=root;Database=otopark;Pwd=;";
+        private string _connectionString = "";
         public Connection()
         {
-            con = new MySqlConnection(localConnectionQuery);
+            Abstract.IDatabaseConnectionStringDal databaseConnectionStringDal = new SQLite.SqliteDatabaseConnectionStringDal();
+
+            _connectionString = databaseConnectionStringDal.GetConnectionString();
+
+            con = new MySqlConnection(_connectionString);
             cmd = new MySqlCommand() { Connection = con };
             con.StateChange += Con_StateChange;
         }
