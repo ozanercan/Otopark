@@ -7,6 +7,8 @@ Bu yazılım Otopark işletmeleri için Katmanlı Mimari kullanılarak C# diliyl
 MySQL destekli SQL dosyası DataAccess>Concrete>MySQL klasörü altında Backup.sql olarak adlandırılmıştır.
 * [Xampp](https://www.apachefriends.org/tr/index.html) - MySQL veritabanını kullanabilmek için gereken program.
 * [Wampp](https://www.wampserver.com/en/) - Xampp'a alternatif program.
+* [SQL Dosyası](https://github.com/ozanercan/Otoparkv2/blob/master/DataAccess/Concrete/MySQL/Backup.sql) - Veritabanı alanları için sql dosyası.
+
 
 ## İlk Kurulumdan Sonra
 Giriş sayfasına girilmesi gereken varsayılan giriş bilgileridir, Personel Düzenleme sayfasından düzenlenebilir.
