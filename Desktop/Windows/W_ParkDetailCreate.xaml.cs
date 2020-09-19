@@ -132,7 +132,7 @@ namespace Desktop.Windows
                     EmployeeId = _employee.Id,
                     ParkingStartDateTime = parkingStartTime,
                     CreationDateTime = DateTime.Now,
-                    IsDeleted = true,
+                    IsDeleted = false,
                 };
                 _parkService.Create(park);
                 MessageBox.Show(string.Format(Languages.LocalizationFile.ParkDetailCreateText), string.Format(Languages.LocalizationFile.SuccessText), MessageBoxButton.OK, MessageBoxImage.Information);

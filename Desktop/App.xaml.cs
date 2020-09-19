@@ -1,11 +1,7 @@
 ﻿using Business.Abstract;
-using Business.Abstract.Apis;
 using Business.Concrete;
-using Business.Concrete.Apis;
 using DataAccess.Abstract;
-using DataAccess.Abstract.License;
 using DataAccess.Concrete.MySQL;
-using DataAccess.Concrete.SQLite.License.Adonet;
 using Desktop.Windows;
 using System.Windows;
 using Unity;
@@ -33,11 +29,8 @@ namespace Desktop
             container.RegisterType<IVehicleService, VehicleManager>();
             container.RegisterType<IVehiclePriceService, VehiclePriceManager>();
             container.RegisterType<IVehicleTypeService, VehicleTypeManager>();
-            container.RegisterType<ILocalLicenseService, LocalLicenseManager>();
-            container.RegisterType<ILicenseService, LicenseManager>();
 
             // Api Servisi
-            container.RegisterType<IApiLicenseService, ApiLicenseManager>();
 
 
             // Data Access Layer
@@ -53,7 +46,6 @@ namespace Desktop
             container.RegisterType<IVehicleDal, MySqlVehicleDal>();
             container.RegisterType<IVehiclePriceDal, MySqlVehiclePriceDal>();
             container.RegisterType<IVehicleTypeDal, MySqlVehicleTypeDal>();
-            container.RegisterType<ILocalLicenseDal, SQLiteLocalLicenseDal>();
 
 
             //W_Login w_Login = container.Resolve<W_Login>();

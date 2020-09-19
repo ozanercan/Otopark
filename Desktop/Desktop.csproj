@@ -187,9 +187,6 @@
     <Compile Include="Windows\W_DinamikKareOlusturma.xaml.cs">
       <DependentUpon>W_DinamikKareOlusturma.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\W_License.xaml.cs">
-      <DependentUpon>W_License.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\W_MainMenu.xaml.cs">
       <DependentUpon>W_MainMenu.xaml</DependentUpon>
     </Compile>
@@ -321,10 +318,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\W_DinamikKareOlusturma.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\W_License.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

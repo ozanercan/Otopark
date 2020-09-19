@@ -100,7 +100,6 @@
     <Compile Include="Abstract\IVehiclePriceDal.cs" />
     <Compile Include="Abstract\IVehicleTypeDal.cs" />
     <Compile Include="Abstract\IDtoMethods.cs" />
-    <Compile Include="Abstract\License\ILocalLicenseDal.cs" />
     <Compile Include="Concrete\MySQL\Connection.cs" />
     <Compile Include="Concrete\MySQL\MySqlBrandDal.cs" />
     <Compile Include="Concrete\MySQL\MySqlCampaignDal.cs" />
@@ -114,8 +113,6 @@
     <Compile Include="Concrete\MySQL\MySqlVehicleDal.cs" />
     <Compile Include="Concrete\MySQL\MySqlVehiclePriceDal.cs" />
     <Compile Include="Concrete\MySQL\MySqlVehicleTypeDal.cs" />
-    <Compile Include="Concrete\SQLite\License\Adonet\Connection.cs" />
-    <Compile Include="Concrete\SQLite\License\Adonet\SQLiteLocalLicenseDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

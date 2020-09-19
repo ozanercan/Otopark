@@ -31,7 +31,9 @@ namespace Desktop.Windows
 
             InitializeComponent();
             Employee = employee;
+            OnPropertyChanged("Employee");
             ParkPlace = parkPlace;
+            OnPropertyChanged("ParkPlace");
         }
 
 

@@ -1,5 +1,4 @@
 ﻿using Business.Abstract;
-using Business.Abstract.Apis;
 using Desktop.Classes;
 using Entities.Concrete;
 using Entities.Concrete.Models;
@@ -16,9 +15,6 @@ namespace Desktop.Windows
     public partial class W_Login : Window
     {
         #region fieldler
-        private ILicenseService _licenseService;
-        private IApiLicenseService _apiLicenseService;
-        private ILocalLicenseService _localLicenseService;
         private IBrandService _brandService;
         private ICampaignService _campaignService;
         private ICustomerService _customerService;
@@ -32,11 +28,8 @@ namespace Desktop.Windows
         private IVehiclePriceService _vehiclePriceService;
         private IVehicleTypeService _vehicleTypeService;
         #endregion
-        public W_Login(ILicenseService licenseService, IApiLicenseService apiLicenseService, ILocalLicenseService localLicenseService, IBrandService brandService, ICampaignService campaignService, ICustomerService customerService, IEmployeeService employeeService, IModelService modelService, IParkHistoryService parkHistoryService, IParkPlaceService parkPlaceService, IParkService parkService, IPersonService personService, IVehicleService vehicleService, IVehiclePriceService vehiclePriceService, IVehicleTypeService vehicleTypeService)
+        public W_Login(IBrandService brandService, ICampaignService campaignService, ICustomerService customerService, IEmployeeService employeeService, IModelService modelService, IParkHistoryService parkHistoryService, IParkPlaceService parkPlaceService, IParkService parkService, IPersonService personService, IVehicleService vehicleService, IVehiclePriceService vehiclePriceService, IVehicleTypeService vehicleTypeService)
         {
-            _licenseService = licenseService;
-            _localLicenseService = localLicenseService;
-            _apiLicenseService = apiLicenseService;
             _brandService = brandService;
             _campaignService = campaignService;
             _customerService = customerService;
@@ -50,7 +43,6 @@ namespace Desktop.Windows
             _vehiclePriceService = vehiclePriceService;
             _vehicleTypeService = vehicleTypeService;
             _employeeService = employeeService;
-            _licenseService = licenseService;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("tr-TR");
 
             InitializeComponent();

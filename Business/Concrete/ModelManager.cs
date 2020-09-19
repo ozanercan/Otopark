@@ -92,7 +92,7 @@ namespace Business.Concrete
         public List<ModelDto> ListDtoByNonDeleted()
         {
             var models = _modelDal.ListByNonDeleted();
-            var brands = _brandService.ListByNonDeleted();
+            var brands = _brandService.List();
 
             var dtoModels = new List<ModelDto>();
 

@@ -8,7 +8,7 @@
       d:DesignHeight="768" d:DesignWidth="1024"
       Title="P_ParkPlaces">
     <Grid x:Name="grid_Main">
-        <Menu Height="23" VerticalAlignment="Top">
+        <Menu Height="23" VerticalAlignment="Top" x:Name="menu">
             <MenuItem x:Name="menuItem_CreateObject" Header="Yeni Nesne" Click="menuItem_CreateObject_Click" />
             <MenuItem x:Name="menuItem_BackgroundImageChangeObject" Header="Arka Planı Değiştir" Click="menuItem_BackgroundImageChangeObject_Click" />
             <MenuItem x:Name="menuItem_Save" Header="Değişiklikleri Kaydet" Click="menuItem_Save_Click" />

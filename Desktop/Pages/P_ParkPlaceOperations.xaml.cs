@@ -221,23 +221,23 @@ namespace Desktop.Pages
                                 createparkPlaces.Add(new ParkPlace()
                                 {
                                     X = Convert.ToInt32(Canvas.GetLeft(uc_parkplace)),
-                                    Y = Convert.ToInt32(Canvas.GetTop(uc_parkplace)),
+                                    Y = Convert.ToInt32(Canvas.GetTop(uc_parkplace) + menu.Height),
                                     Width = Convert.ToInt32(uc_parkplace.Width),
                                     Height = Convert.ToInt32(uc_parkplace.Height),
                                     Name = uc_parkplace.Content.ToString(),
                                     CreationDate = DateTime.Now,
-                                    IsDeleted = true
+                                    IsDeleted = false
                                 });
                             }
                             else // ParkPlace null değilse objeyi update yap.
                             {
                                 ParkPlace p = uc_parkplace.ParkPlace;
                                 p.X = Convert.ToInt32(Canvas.GetLeft(uc_parkplace));
-                                p.Y = Convert.ToInt32(Canvas.GetTop(uc_parkplace));
+                                p.Y = Convert.ToInt32(Canvas.GetTop(uc_parkplace) + menu.Height);
                                 p.Width = Convert.ToInt32(uc_parkplace.Width);
                                 p.Height = Convert.ToInt32(uc_parkplace.Height);
                                 p.Name = uc_parkplace.Content.ToString();
-                                p.IsDeleted = true;
+                                p.IsDeleted = false;
                                 updateparkPlaces.Add(p);
                             }
                         }
